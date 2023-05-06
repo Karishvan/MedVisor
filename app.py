@@ -11,7 +11,7 @@ def index():
 
 @app.route('/receive-string', methods=['POST'])
 def receive_string():
-    my_string = request.form['my_string']
+    my_string = request.form['userSymptomsSummary']
     print(my_string)
     return 'String received'
 
