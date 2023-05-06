@@ -22,11 +22,11 @@
 			<div class="question">
 	  			<label>What age group do you fit in?</label>
 				<div class="response">
-					<input type="radio" id="html" name="age" value="I am young">
+					<input type="radio" class="option" name="age" value="I am young">
 					<label>0-16</label>
-					<input type="radio" id="css" name="age" value="">
+					<input type="radio" class="option" name="age" value="">
 					<label>17-64</label>
-					<input type="radio" id="javascript" name="age" value="I am a senior citizen">
+					<input type="radio" class="option" name="age" value="I am a senior citizen">
 					<label>65+</label>
 				</div>
 				<button type="button" class="next">Next</button>
@@ -36,20 +36,111 @@
 			<div class="question">
                 <label>What symptoms are you experiencing?</label>
 				<div class="response">
-					<input type="text" name="symptoms">
+					<input type="text" class = "option" name="symptoms">
 				</div>
               <button type="button" class="next">Next</button>
-          </div>
+          	</div>
+
+			<div class="question">
+                <label>Are you experiencing any pain in the back, neck or joints?</label>
+				<div class="response">
+					<input type="radio" class = "option" name="back/neck/joints" value = "I have pain in neck, back or joints">
+					<label>yes</label>
+					<input type = "radio" class = "option" name = "back/neck/joints">
+					<label>no</label>
+				</div>
+              <button type="button" class="next">Next</button>
+          	</div>
 
 
+			
+			<div class="question">
+                <label>Are you experiencing any pain or discomfort while breathing or coughing?</label>
+				<div class="response">
+					<input type="radio" class = "option" name="cough/breath" value = "I have trouble breathing or coughing">
+					<label>yes</label>
+					<input type = "radio" class = "option" name = "cough/breath">
+					<label>no</label>
+				</div>
+              <button type="button" class="next">Next</button>
+          	</div>
 
+			<div class="question">
+				<label>Is the pain sudden?</label>
+				<div class="response">
+					<input type="radio" class = "option" name="sudden-pain" value = "I have sudden pain">
+					<label>yes</label>
+					<input type = "radio" class = "option" name = "sudden-pain">
+					<label>no</label>
+				</div>
+              <button type="button" class="next">Next</button>
+          	</div>
 
+			<div class="question">
+				<label>Are you bleeding?</label>
+				<div class="response">
+					<input type="radio" class = "option" name="bleed" value = "I am bleeding">
+					<label>yes</label>
+					<input type = "radio" class = "option" name = "bleed">
+					<label>no</label>
+				</div>
+              <button type="button" class="next">Next</button>
+          	</div>
 
+			<div class="question">
+				<label>Are you experiencing any loss of mobility or stiffness in the affected area?</label>
+				<div class="response">
+					<input type="radio" class = "option" name="mobility-loss/stiffness" value = "I have a loss of mobility, stiffness, serious, broken bones">
+					<label>yes</label>
+					<input type = "radio" class = "option" name = "mobility-loss/stiffness">
+					<label>no</label>
+				</div>
+              <button type="button" class="next">Next</button>
+          	</div>
 
+			<div class="question">
+				<label>Are you experiencing any swelling?</label>
+				<div class="response">
+					<input type="radio" class = "option" name="swelling" value = "I am swelling">
+					<label>yes</label>
+					<input type = "radio" class = "option" name = "swelling">
+					<label>no</label>
+				</div>
+              <button type="button" class="next">Next</button>
+          	</div>
 
+			<div class="question">
+				<label>Is your skin irritated</label>
+				<div class="response">
+					<input type="radio" class = "option" name="irritation" value = "I have skin irration and/or rash">
+					<label>yes</label>
+					<input type = "radio" class = "option" name = "irritation">
+					<label>no</label>
+				</div>
+              <button type="button" class="next">Next</button>
+          	</div>
 
+			<div class="question">
+				<label>Have you been exposed to any chemicals or environmental toxins?</label>
+				<div class="response">
+					<input type="radio" class = "option" name="toxic" value = "I have been exposed to chemicals or environmental toxins">
+					<label>yes</label>
+					<input type = "radio" class = "option" name = "toxic">
+					<label>no</label>
+				</div>
+              <button type="button" class="next">Next</button>
+          	</div>
 
-
+			<div class="question">
+				<label>Are you suffering with your mental health?</label>
+				<div class="response">
+					<input type="radio" class = "option" name="mental" value = "I have stress/anxiety/other mental health issues">
+					<label>yes</label>
+					<input type = "radio" class = "option" name = "mental">
+					<label>no</label>
+				</div>
+              <button type="button" class="next">Next</button>
+          	</div>
 
 
 
@@ -59,15 +150,20 @@
 
 
 			<div class="question">
-				<label>question?</label>
+				<label>BLANK QUESTION TEMPORARY</label>
 				<div class="response">
 					<input type="text" name="symptoms">
 				</div>
 				<button type="submit">Submit</button>
 			</div>
 		</form>
+
+        </script>
+
+
 	</div>
-	<script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
 </html>

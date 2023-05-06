@@ -15,7 +15,7 @@ function hideQuestion() {
 function nextQuestion() {
   const response = getResponse();
   userSymptomsSummary += ". " + response;
-  console.log("CURRENT SUMMARY IS: " + results)
+  console.log("CURRENT SUMMARY IS: " + userSymptomsSummary)
   hideQuestion();
   currentQuestion++;
   if (currentQuestion < questions.length) {
@@ -45,3 +45,22 @@ showQuestion();
 nextButton.forEach(button => {
   button.addEventListener("click", nextQuestion);
 });
+
+
+const form = document.querySelector('form');
+const resultDiv = document.querySelector('#result');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const formData = new FormData(form);
+  fetch('/calculate', {
+      method: 'POST',
+      body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+      resultDiv.innerHTML = `Result: ${data.result}`;
+  });
+});
+
+
+
