@@ -5,6 +5,7 @@ let userSymptomsSummary = "";
 let currentQuestion = 0;
 
 function showQuestion() {
+  console.log(questions[currentQuestion].classList)
   questions[currentQuestion].classList.add("active");
 }
 
@@ -46,7 +47,7 @@ nextButton.forEach(button => {
   button.addEventListener("click", nextQuestion);
 });
 
-
+/* 
 const form = document.querySelector('form');
 const resultDiv = document.querySelector('#result');
 form.addEventListener('submit', (event) => {
@@ -61,6 +62,5 @@ form.addEventListener('submit', (event) => {
       resultDiv.innerHTML = `Result: ${data.result}`;
   });
 });
-
-
+*/
 
