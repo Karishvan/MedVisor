@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Number Multiplier</title>
+</head>
+<body>
+    <h1>Number Multiplier</h1>
+    <form method="post" action="/calculate">
+        <label for="number">Enter a number:</label>
+        <input type="text" id="number" name="number">
+        <input type="submit" value="Calculate">
+    </form>
+    <div id="result"></div>
+    <script>
+        const form = document.querySelector('form');
+        const resultDiv = document.querySelector('#result');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const formData = new FormData(form);
+            fetch('/calculate', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                resultDiv.innerHTML = `Result: ${data.result}`;
+            });
+        });
+    </script>
+</body>
+</html>
