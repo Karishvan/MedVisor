@@ -19,3 +19,11 @@ h1 {
     display: flex;
     justify-content: center;
 }
+
+.question {
+    display: none;
+  }
+  
+  .question.active {
+    display: block;
+  }
