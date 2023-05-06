@@ -8,6 +8,13 @@ app = Flask(__name__)
 def index():
     return render_template('index.html', the_title='COHERE TEST')
 
+
+@app.route('/receive-string', methods=['POST'])
+def receive_string():
+    my_string = request.form['my_string']
+    print(my_string)
+    return 'String received'
+
 @app.route('/calculate', methods=['POST'])
 def calculate():
     input_data = request.form['number']

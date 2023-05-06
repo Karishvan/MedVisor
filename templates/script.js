@@ -1,6 +1,6 @@
 const questions = document.querySelectorAll(".question");
 const nextButton = document.querySelectorAll(".next");
-let results = "";
+let userSymptomsSummary = "";
 
 let currentQuestion = 0;
 
@@ -14,8 +14,8 @@ function hideQuestion() {
 
 function nextQuestion() {
   const response = getResponse();
-  results += ". " + response;
-  console.log("CURRENT RESULTS ARE " + results)
+  userSymptomsSummary += ". " + response;
+  console.log("CURRENT SUMMARY IS: " + results)
   hideQuestion();
   currentQuestion++;
   if (currentQuestion < questions.length) {
