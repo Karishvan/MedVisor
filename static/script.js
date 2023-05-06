@@ -2,9 +2,11 @@ const questions = document.querySelectorAll(".question");
 const nextButton = document.querySelectorAll(".next");
 let userSymptomsSummary = "";
 
+console.log(questions);
 let currentQuestion = 0;
 
 function showQuestion() {
+  console.log(questions[currentQuestion])
   questions[currentQuestion].classList.add("active");
 }
 
@@ -33,7 +35,16 @@ function getResponse() {
     return checkedInput.value;
   } else if (responseElement.querySelector("input[type=range]")) {
     const rangeInput = responseElement.querySelector("input[type=range]");
-    return rangeInput.value;
+    const rangeValue = rangeInput.value;
+    let painTitle;
+    if (rangeValue >= 0 && rangeValue <=2){
+      painTitle = "mild"; 
+    } else if (rangeValue >= 3 && rangeValue <= 5){
+      painTitle = "medium"
+    } else {
+      painTitle = "severe"
+    }
+    return painTitle;
   } else if (responseElement.querySelector("input[type=text]")) {
     const textInput = responseElement.querySelector("input[type=text]");
     return textInput.value;
@@ -61,6 +72,4 @@ form.addEventListener('submit', (event) => {
       resultDiv.innerHTML = `Result: ${data.result}`;
   });
 });
-
-
 

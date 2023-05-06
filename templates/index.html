@@ -3,7 +3,8 @@
 
 <head>
 	<title>Survey Website</title>
-	<link rel="stylesheet" href="style.css">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
@@ -13,7 +14,7 @@
 			<div class="question active">
 				<label>Please rate your pain from 0-10</label>
 				<div class="response">
-					<input type="range" value="0" min="1" max="10" oninput="this.nextElementSibling.value = this.value">
+					<input id = "range" type="range" value="0" min="1" max="10" oninput="this.nextElementSibling.value = this.value">
 					<output>0</output>		
 				</div>
 				<button type="button" class="next">Next</button>
@@ -162,8 +163,6 @@
 
 
 	</div>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
 </html>
