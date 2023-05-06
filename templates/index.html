@@ -4,6 +4,7 @@
 <head>
 	<title>Survey Website</title>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -157,13 +158,14 @@
 				<button type="submit">Submit</button>
 			</div>
 		</form>
-
+		<div id="result"></div>
         </script>
 
 
 	</div>
     
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+	
 </body>
 
 </html>

@@ -47,20 +47,33 @@ nextButton.forEach(button => {
   button.addEventListener("click", nextQuestion);
 });
 
-/* 
+
+
 const form = document.querySelector('form');
 const resultDiv = document.querySelector('#result');
 form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const formData = new FormData(form);
-  fetch('/calculate', {
-      method: 'POST',
-      body: formData
-  })
-  .then(response => response.json())
-  .then(data => {
-      resultDiv.innerHTML = `Result: ${data.result}`;
-  });
+    $.ajax({
+      type: "POST",
+      url: "/endpoint",
+      data: {userSymptomsSummary: userSymptomsSummary},
+      success: function(data) {
+          console.log("Data sent successfully!");
+      },
+      error: function() {
+          console.log("Error sending data");
+      }
+    });
+
+    event.preventDefault();
+    const formData = new FormData(form);
+    fetch('/calculate', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        resultDiv.innerHTML = `Result: ${data.result}`;
+    });
 });
-*/
+
 
