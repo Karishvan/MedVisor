@@ -15,6 +15,10 @@ html {
         rgba(255, 131, 241, 0.5)
     ), url('../templates/images/background.svg');
 }
+h1 {
+    font-size: 30px;
+}
+
 
 .survey {
     display: flex;
@@ -26,7 +30,7 @@ html {
 
 /* Buttons */
 button{
-    margin-top: 13%;
+    /* margin-top: 13%; */
     position: absolute;
     background: #76004F;
     color: white;
@@ -35,16 +39,18 @@ button{
     width: 211px;
     height: 53px;
     border-radius: 28px;
+    bottom: 10px;
     
 }
 
 .restart {
-    align-items: left;
-    margin-right: 40%;
+
+    left: 20px;
+    
 }
 
 .next {
-    margin-left: 40%;
+    right: 20px;
 }
 
 
@@ -70,8 +76,19 @@ h1 {
 
 .question {
     display: none;
+    text-align: center;
+    font-size: 28px;
+
+    
   }
   
   .question.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .response {
+    margin-top: 30px;
+    
   }
