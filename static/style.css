@@ -11,8 +11,8 @@ html {
     background-size: cover; /* Resize the background image to cover the entire container */
     background-image: linear-gradient(
         to bottom,
-        rgba(212, 147, 255, 0.5),
-        rgba(255, 131, 241, 0.5)
+        rgba(212, 147, 255, 0.2),
+        rgba(255, 131, 241, 0.2)
     ), url('./images/background.svg');
 }
 h1 {
