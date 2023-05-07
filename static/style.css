@@ -83,23 +83,21 @@ h1 {
   }
   
   .option1 {
+    background: #B76587;
+  }
+  .option2 {
+    background: #8E65B7;
+    
+  }
+  .option3 {
+    background: #B565B7;
+  }
+
+  .option1, .option2, .option3 {
     flex: 1;
     width: 340px;
     height: 63px;
-
-    background: #B76587;
     border-radius: 60px 0px;
-  }
-  .option2 {
-    flex: 1;
-    width: 339px;
-    height: 63px;
-
-    background: #8E65B7;
-    border-radius: 60px 0px;
-  }
-
-  .option1, .option2 {
     display: flex;
     justify-content: center;
     align-items: center;
