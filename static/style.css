@@ -2,11 +2,59 @@
 html {
     background-color: rgb(217, 241, 202);
     font-family: "Inter", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    min-height: 100vh;
+    color: white;
+    scroll-snap-type: y mandatory;
+    overflow-y: hidden;
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-image: linear-gradient(
+        to bottom,
+        rgba(212, 147, 255, 0.5),
+        rgba(255, 131, 241, 0.5)
+    ), url('../templates/images/background.svg');
 }
+
+.survey {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+
+/* Buttons */
+button{
+    margin-top: 13%;
+    position: absolute;
+    background: #76004F;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    width: 211px;
+    height: 53px;
+    border-radius: 28px;
+    
+}
+
+.restart {
+    align-items: left;
+    margin-right: 40%;
+}
+
+.next {
+    margin-left: 40%;
+}
+
+
+
+
 h1 {
     text-align: center;
     color: rgb(124, 207, 126);
 }
+
 #number {
     border-radius: 10px;
     padding: 5px 10px;

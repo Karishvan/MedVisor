@@ -31,7 +31,10 @@ def calculate():
         inputs=inputs,
         examples=examples,
     )
-    return jsonify({'result': response[0].prediction})
+    result = jsonify({'result': response[0].prediction})
+    # Storing Result and input string into Database
+    
+    return result
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -8,8 +8,8 @@
 </head>
 
 <body>
+	<h1>MedVisor</h1>
 	<div class="survey">
-		<h1>MedVisor</h1>
 		<form>
 			<div class="question active">
 				<label>Please rate your pain from 0-10</label>
@@ -17,7 +17,8 @@
 					<input type="range" value="0" min="1" max="10" oninput="this.nextElementSibling.value = this.value">
 					<output>0</output>		
 				</div>
-				<button type="button" class="next">Next</button>
+				<button type="button" class ="next">NEXT</button>
+				<button type="button" class="restart">Restart</button>
 			</div>
 
 			<div class="question">
@@ -31,6 +32,7 @@
 					<label>65+</label>
 				</div>
 				<button type="button" class="next">Next</button>
+				<button type="button" class="restart">Restart</button>
 			</div>
 
 
@@ -40,6 +42,7 @@
 					<input type="text" class = "option" name="symptoms">
 				</div>
               <button type="button" class="next">Next</button>
+			  <button type="button" class="restart">Restart</button>
           	</div>
 
 			<div class="question">
@@ -51,6 +54,7 @@
 					<label>no</label>
 				</div>
               <button type="button" class="next">Next</button>
+			  <button type="button" class="restart">Restart</button>
           	</div>
 
 
@@ -64,6 +68,7 @@
 					<label>no</label>
 				</div>
               <button type="button" class="next">Next</button>
+			  <button type="button" class="restart">Restart</button>
           	</div>
 
 			<div class="question">
@@ -75,6 +80,7 @@
 					<label>no</label>
 				</div>
               <button type="button" class="next">Next</button>
+			  <button type="button" class="restart">Restart</button>
           	</div>
 
 			<div class="question">
@@ -86,6 +92,7 @@
 					<label>no</label>
 				</div>
               <button type="button" class="next">Next</button>
+			  <button type="button" class="restart">Restart</button>
           	</div>
 
 			<div class="question">
@@ -97,6 +104,7 @@
 					<label>no</label>
 				</div>
               <button type="button" class="next">Next</button>
+			  <button type="button" class="restart">Restart</button>
           	</div>
 
 			<div class="question">
@@ -108,6 +116,7 @@
 					<label>no</label>
 				</div>
               <button type="button" class="next">Next</button>
+			  <button type="button" class="restart">Restart</button>
           	</div>
 
 			<div class="question">
@@ -119,6 +128,7 @@
 					<label>no</label>
 				</div>
               <button type="button" class="next">Next</button>
+			  <button type="button" class="restart">Restart</button>
           	</div>
 
 			<div class="question">
@@ -130,6 +140,7 @@
 					<label>no</label>
 				</div>
               <button type="button" class="next">Next</button>
+			  <button type="button" class="restart">Restart</button>
           	</div>
 
 			<div class="question">
@@ -141,21 +152,13 @@
 					<label>no</label>
 				</div>
               <button type="button" class="next">Next</button>
+			  <button type="button" class="restart">Restart</button>
           	</div>
 
 
-
-
-
-
-
-
 			<div class="question">
-				<label>BLANK QUESTION TEMPORARY</label>
-				<div class="response">
-					<input type="text" name="symptoms">
-				</div>
-				<button type="submit">Submit</button>
+				<label>Survey Complete</label>
+				<button type="submit">RESULTS</button>
 			</div>
 		</form>
 		<div id="result"></div>
