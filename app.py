@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, render_template, url_for
 import cohere
 from cohere.responses.classify import Example
+import sqlite3
 app = Flask(__name__, static_url_path='/static')
 
 
@@ -35,6 +36,49 @@ def calculate():
     # Storing Result and input string into Database
     
     return result
+
+# gets the inputs and results and adds them to a table in a database
+def add_to_db(inputs, result):
+    # Create a connection object to the database
+    conn = sqlite3.connect('MedVisor.db')
+
+    # Create a cursor object
+    cursor = conn.cursor()
+
+    table_name = "resultsTable"
+
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name=?", (table_name,))
+
+    # Get the result
+    result = cursor.fetchone()
+
+    # Check if the table exists
+    if result:
+        # Insert a new row into the table
+        cursor.execute("INSERT INTO resultsTable (summary, result) VALUES (?, ?)", (inputs, result))
+        conn.commit()
+
+        # gets all the rows in the table
+        # cursor.execute("SELECT * FROM resultsTable")
+        # conn.commit()
+        # rows = cursor.fetchall()
+
+        # Print the fetched data
+        # for row in rows:
+        #     print(row)
+
+        # Close the connection
+        conn.close()
+        
+    else:
+        # Create a table
+        cursor.execute('''CREATE TABLE resultsTable
+                        (id INTEGER PRIMARY KEY,
+                        summary TEXT,
+                        result TEXT)''')
+
+        # Commit the changes
+        conn.commit()
 
 if __name__ == '__main__':
     app.run(debug=True)
