@@ -13,7 +13,7 @@ html {
         to bottom,
         rgba(212, 147, 255, 0.5),
         rgba(255, 131, 241, 0.5)
-    ), url('background.svg');
+    ), url('./images/background.svg');
 }
 h1 {
     font-size: 30px;
