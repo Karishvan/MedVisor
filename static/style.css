@@ -82,6 +82,28 @@ h1 {
     
   }
   
+  .option1 {
+    flex: 1;
+    width: 340px;
+    height: 63px;
+
+    background: #B76587;
+    border-radius: 60px 0px;
+  }
+  .option2 {
+    flex: 1;
+    width: 339px;
+    height: 63px;
+
+    background: #8E65B7;
+    border-radius: 60px 0px;
+  }
+
+  .option1, .option2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .question.active {
     display: flex;
     flex-direction: column;
@@ -90,5 +112,7 @@ h1 {
 
   .response {
     margin-top: 30px;
-    
+    display: flex;
+    justify-content: center;
   }
+  
