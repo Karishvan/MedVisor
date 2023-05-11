@@ -40,13 +40,10 @@ button{
     height: 53px;
     border-radius: 28px;
     bottom: 10px;
-    
 }
 
 .restart {
-
     left: 20px;
-    
 }
 
 .next {
@@ -77,11 +74,21 @@ h1 {
 .question {
     display: none;
     text-align: center;
-    font-size: 28px;
-
-    
+    font-size: 28px;  
   }
   
+
+  optionButtons{
+    /* margin-top: 13%; */
+    font-weight: bold;
+    font-size: 18px;
+    width: 211px;
+    height: 53px;
+    border-radius: 28px;
+    bottom: 10px;
+}
+
+
   .option1 {
     background: #B76587;
   }

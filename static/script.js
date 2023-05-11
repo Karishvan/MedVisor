@@ -15,7 +15,7 @@ function hideQuestion() {
 
 function nextQuestion() {
   const response = getResponse();
-  userSymptomsSummary += ". " + response;
+  userSymptomsSummary += response;
   console.log("CURRENT SUMMARY IS: " + userSymptomsSummary)
   hideQuestion();
   currentQuestion++;
