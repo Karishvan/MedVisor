@@ -34,10 +34,10 @@ function getResponse() {
     return checkedInput.value;
   } else if (responseElement.querySelector("input[type=range]")) {
     const rangeInput = responseElement.querySelector("input[type=range]");
-    return rangeInput.value;
+    return "The severity of my pain out of ten is " + rangeInput.value + "/10. ";
   } else if (responseElement.querySelector("input[type=text]")) {
     const textInput = responseElement.querySelector("input[type=text]");
-    return textInput.value;
+    return textInput.value + ". ";
   }
 }
 
