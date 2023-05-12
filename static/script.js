@@ -50,30 +50,27 @@ nextButton.forEach(button => {
 
 
 const form = document.querySelector('form');
-const resultDiv = document.querySelector('#result');
 form.addEventListener('submit', (event) => {
-    $.ajax({
-      type: "POST",
-      url: "/endpoint",
-      data: {userSymptomsSummary: userSymptomsSummary},
-      success: function(data) {
-          console.log("Data sent successfully!");
-      },
-      error: function() {
-          console.log("Error sending data");
-      }
-    });
-
     event.preventDefault();
     const formData = new FormData(form);
+
     fetch('/calculate', {
         method: 'POST',
         body: formData
     })
-    .then(response => response.json())
-    .then(data => {
-        resultDiv.innerHTML = `Result: ${data.result}`;
+    .then(response => {
+        if (response.ok) {
+            const result = encodeURIComponent(formData.get('userSymptomsSummary'));
+            const url = `/results?result=${result}`;
+            window.location.href = url;  // Redirect to the results page with the query parameter
+        } else {
+            throw new Error('Error occurred during calculation');
+        }
+    })
+    .catch(error => {
+        console.log('An error occurred:', error);
     });
 });
+
 
 

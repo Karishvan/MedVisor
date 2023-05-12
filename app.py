@@ -36,6 +36,13 @@ def calculate():
     )
     result = response[0].prediction
     # Storing Result and input string into Database
+    print("\n\n\n RESULTS TESTTSTST: "  + result + "\n\n\n")
+    if result is None:
+        result = "No result available"
+
+    if result == "null":
+        result = "No result available"
+        
     return redirect(url_for('show_results', result=result))
 
 @app.route('/results')
