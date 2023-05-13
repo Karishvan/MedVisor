@@ -48,19 +48,21 @@ nextButton.forEach(button => {
 });
 
 
-
+/* 
 const form = document.querySelector('form');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData(form);
-
+    console.log("CURRENT USER SYMPTOMS SUMM IS " + userSymptomsSummary)
+    formData.append('userSymptomsSummary', userSymptomsSummary); // Add the userSymptomsSummary value to the form data
+    
     fetch('/calculate', {
         method: 'POST',
         body: formData
     })
     .then(response => {
         if (response.ok) {
-            const result = encodeURIComponent(formData.get('userSymptomsSummary'));
+            const result = encodeURIComponent(response);
             const url = `/results?result=${result}`;
             window.location.href = url;  // Redirect to the results page with the query parameter
         } else {
@@ -71,6 +73,38 @@ form.addEventListener('submit', (event) => {
         console.log('An error occurred:', error);
     });
 });
+ */
 
 
+const form = document.querySelector('form');
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    console.log("CURRENT USER SYMPTOMS SUMM IS " + userSymptomsSummary)
+    formData.append('userSymptomsSummary', userSymptomsSummary); // Add the userSymptomsSummary value to the form data
+    fetch('/endpoint', {
+      method: 'POST',
+      body: formData
+    })
+    fetch('/calculate', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (response.ok) {
+          return response.json(); // Parse the response as JSON
+      } else {
+          throw new Error('Error occurred during calculation');
+      }
+    })
+    .then(result => {
+      const calcResp = result.result; // Extract the 'result' property from the response
+      const encodedResult = encodeURIComponent(calcResp);
+      const url = `/results?result=${encodedResult}`;
+      window.location.href = url; // Redirect to the results page with the query parameter
+    })
+    .catch(error => {
+        console.log('An error occurred:', error);
+    });
+});
 
